@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Kênia Evelyn | Harmonização Orofacial em Duque de Caxias</title>
+    <meta name="description" content="Dra. Kênia Evelyn — Harmonização Orofacial em Duque de Caxias, RJ. Procedimentos planejados para realçar sua beleza com naturalidade, elegância e respeito aos seus traços.">
+    <meta name="keywords" content="Dra. Kênia Evelyn, Harmonização Orofacial Duque de Caxias, Harmonização Facial Duque de Caxias, Bioestimulador, Ácido Hialurônico, Toxina Botulínica">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Dra. Kênia Evelyn | Harmonização Orofacial">
+    <meta property="og:description" content="Harmonização Orofacial em Duque de Caxias. Realço sua beleza com naturalidade e elegância.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts: Cormorant Garamond (Titles) & Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration & Custom Styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-white': '#FFFFFF',
+                        'brand-offwhite': '#FAF6EF',
+                        'brand-beige': '#EFE4D3',
+                        'brand-sand': '#E1D0B8',
+                        'brand-taupe': '#9C8770',
+                        'brand-brown': '#6B5541',
+                        'brand-charcoal': '#1C140F',
+                        'brand-gold': '#AD8B55',
+                        'brand-gold-hover': '#8F7143',
+                    },
+                    fontFamily: {
+                        'serif': ['"Cormorant Garamond"', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    spacing: {
+                        'section': '8rem',
+                        'section-sm': '5rem',
+                    },
+                    transitionDuration: {
+                        '400': '400ms',
+                        '500': '500ms',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles & Utilities */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1C140F;
+            background-color: #FAF6EF;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: relative;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-serif {
+            font-family: '"Cormorant Garamond"', serif;
+        }
+
+        /* Micro-interactions & Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Header Transition */
+        #main-header {
+            transition: background-color 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        #main-header.scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Editorial Image Hover */
+        .img-editorial {
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .img-container {
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .img-container:hover .img-editorial {
+            transform: scale(1.03);
+        }
+
+        /* Gold / Bronze Button Styling */
+        .btn-gold {
+            background-color: #AD8B55;
+            color: #FFFFFF;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-gold:hover {
+            background-color: #8F7143;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(173, 139, 85, 0.3);
+        }
+
+        .btn-gold::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .btn-gold:hover::after {
+            left: 100%;
+        }
+
+        .btn-outline {
+            border: 1px solid #6B5541;
+            color: #6B5541;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background-color: #6B5541;
+            color: #FFFFFF;
+        }
+
+        /* Light-on-dark outline variant, used on the hero */
+        .btn-outline-light {
+            border: 1px solid rgba(250, 246, 239, 0.4);
+            color: #FAF6EF;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-light:hover {
+            background-color: #FAF6EF;
+            color: #1C140F;
+            border-color: #FAF6EF;
+        }
+
+        /* Lightbox */
+        #lightbox {
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        /* Accordion */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+            padding-bottom: 1.5rem;
+            padding-top: 0.5rem;
+        }
+
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Results carousel (mobile) */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .carousel-dot {
+            transition: background-color 0.3s ease, width 0.3s ease;
+        }
+
+        .carousel-arrow {
+            transition: background-color 0.3s ease, opacity 0.3s ease;
+        }
+
+        .carousel-arrow:disabled {
+            opacity: 0.35;
+            pointer-events: none;
+        }
+
+        /* Respect Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            .fade-up {
+                transition: none;
+                opacity: 1;
+                transform: none;
+            }
+            .img-editorial, .btn-gold, .btn-outline, .btn-outline-light {
+                transition: none;
+                transform: none !important;
+            }
+        }
+
+        /* WhatsApp Message pre-fill */
+        .wpp-link {
+            cursor: pointer;
+        }
+
+        /* Mobile Menu Button Animation */
+        #mobile-menu-btn .line {
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, width 0.3s ease-in-out, top 0.3s ease-in-out;
+            transform-origin: center;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #mobile-menu-btn .line-1 { top: 30%; }
+        #mobile-menu-btn .line-2 { top: 50%; transform: translate(-50%, -50%); }
+        #mobile-menu-btn .line-3 { top: 70%; }
+
+        #mobile-menu-btn.open .line-1 {
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        #mobile-menu-btn.open .line-2 {
+            opacity: 0;
+        }
+
+        #mobile-menu-btn.open .line-3 {
+            top: 50%;
+            width: 1.5rem !important;
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- HEADER -->
+    <header id="main-header" class="fixed w-full top-0 z-50 py-6 transition-all duration-300">
+        <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
+            <!-- Logo / Name -->
+            <a href="#" class="font-serif text-2xl tracking-wide text-brand-charcoal z-50 relative">
+                Dra. Kênia Evelyn
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="#sobre" class="text-sm tracking-widest text-brand-charcoal hover:text-brand-taupe transition-colors">SOBRE</a>
+                <a href="#tratamentos" class="text-sm tracking-widest text-brand-charcoal hover:text-brand-taupe transition-colors">TRATAMENTOS</a>
+                <a href="#resultados" class="text-sm tracking-widest text-brand-charcoal hover:text-brand-taupe transition-colors">RESULTADOS</a>
+                <a href="#faq" class="text-sm tracking-widest text-brand-charcoal hover:text-brand-taupe transition-colors">FAQ</a>
+                <a href="https://wa.me/5521983916437?text=Olá,%20gostaria%20de%20agendar%20uma%20avaliação%20com%20a%20Dra.%20Kênia." target="_blank" rel="noopener noreferrer" class="btn-gold px-6 py-2.5 rounded-full text-sm tracking-wider uppercase font-medium">
+                    Agende sua avaliação
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="lg:hidden text-brand-charcoal z-[60] relative p-2 focus:outline-none w-10 h-10" aria-label="Abrir menu">
+                <div class="line line-1 w-6 h-[2px] bg-brand-charcoal"></div>
+                <div class="line line-2 w-6 h-[2px] bg-brand-charcoal"></div>
+                <div class="line line-3 w-4 h-[2px] bg-brand-charcoal ml-auto"></div>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-brand-offwhite z-40 flex flex-col justify-center items-center opacity-0 pointer-events-none transition-opacity duration-300">
+            <nav class="flex flex-col items-center space-y-8">
+                <a href="#sobre" class="mobile-link text-2xl font-serif text-brand-charcoal">Sobre</a>
+                <a href="#tratamentos" class="mobile-link text-2xl font-serif text-brand-charcoal">Tratamentos</a>
+                <a href="#resultados" class="mobile-link text-2xl font-serif text-brand-charcoal">Resultados</a>
+                <a href="#faq" class="mobile-link text-2xl font-serif text-brand-charcoal">FAQ</a>
+                <div class="pt-8">
+                    <a href="https://wa.me/5521983916437?text=Olá,%20gostaria%20de%20agendar%20uma%20avaliação%20com%20a%20Dra.%20Kênia." target="_blank" rel="noopener noreferrer" class="btn-gold px-8 py-3 rounded-full text-sm tracking-wider uppercase font-medium block text-center">
+                        Agende sua avaliação
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION — full-bleed editorial split -->
+    <section id="inicio" class="relative bg-brand-charcoal overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-2 lg:min-h-screen">
+
+            <!-- Hero Image (first on mobile, right column on desktop) -->
+            <div class="relative order-1 lg:order-2 h-[62vh] lg:h-auto">
+                <img src="kenia.jpg" alt="Dra. Kênia Evelyn, especialista em Harmonização Orofacial" class="w-full h-full object-cover object-top" fetchpriority="high">
+                <!-- Seam blend into the ink panel on desktop -->
+                <div class="hidden lg:block absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-brand-charcoal to-transparent pointer-events-none"></div>
+                <!-- Soft bottom blend on mobile so text panel feels connected -->
+                <div class="lg:hidden absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-brand-charcoal to-transparent pointer-events-none"></div>
+            </div>
+
+            <!-- Hero Text -->
+            <div class="order-2 lg:order-1 flex flex-col justify-center px-6 md:px-12 lg:pl-20 lg:pr-16 py-14 lg:py-0 fade-up">
+                <div class="inline-block mb-6">
+                    <span class="text-xs uppercase tracking-[0.3em] text-brand-sand/80 block mb-2">Harmonização Orofacial</span>
+                    <div class="w-12 h-px bg-brand-gold"></div>
+                </div>
+
+                <h1 class="font-serif leading-[1.08] text-brand-offwhite mb-8">
+                    <span class="block text-5xl md:text-6xl lg:text-[4.25rem] font-medium">Beleza que já é sua.</span>
+                    <span class="block text-3xl md:text-4xl lg:text-[2.75rem] italic font-light text-brand-sand mt-1">O cuidado é revelar.</span>
+                </h1>
+
+                <p class="text-base md:text-lg text-brand-sand/90 font-light mb-10 max-w-md leading-relaxed">
+                    Planejamento minucioso para valorizar seus traços, respeitar sua anatomia e preservar aquilo que faz você ser única.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center mb-10">
+                    <a href="https://wa.me/5521983916437?text=Olá,%20gostaria%20de%20agendar%20uma%20avaliação%20com%20a%20Dra.%20Kênia." target="_blank" rel="noopener noreferrer" class="btn-gold px-8 py-4 rounded-full text-sm tracking-wider uppercase font-medium text-center w-full sm:w-auto">
+                        Agende sua avaliação
+                    </a>
+                    <a href="#sobre" class="btn-outline-light px-8 py-4 rounded-full text-sm tracking-wider uppercase font-medium text-center w-full sm:w-auto">
+                        Conheça meu trabalho
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-4 text-xs tracking-widest uppercase text-brand-taupe">
+                    <span>CRO-RJ 58.138</span>
+                    <span class="w-1 h-1 rounded-full bg-brand-taupe"></span>
+                    <span>Duque de Caxias, RJ</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MICRO AUTHORITY BAR -->
+    <div class="w-full border-b border-brand-sand bg-brand-offwhite py-4 fade-up">
+        <div class="container mx-auto px-6 flex flex-wrap justify-center gap-8 md:gap-16 text-xs tracking-[0.2em] uppercase text-brand-taupe">
+            <span>Harmonização Orofacial</span>
+            <span class="hidden md:inline">|</span>
+            <span>CRO-RJ 58.138</span>
+            <span class="hidden md:inline">|</span>
+            <span>Duque de Caxias — RJ</span>
+        </div>
+    </div>
+
+    <!-- FILOSOFIA / SOBRE -->
+    <section id="sobre" class="py-section bg-brand-white">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+
+                <!-- Portrait -->
+                <div class="lg:col-span-5 relative fade-up">
+                    <div class="relative aspect-[4/5] max-w-md mx-auto lg:max-w-none overflow-hidden rounded-sm img-container">
+                        <img src="kenia.jpg" alt="Dra. Kênia Evelyn, cirurgiã-dentista e especialista em Harmonização Orofacial" class="w-full h-full object-cover object-top img-editorial">
+                    </div>
+                    <div class="hidden lg:block absolute -bottom-6 -right-6 w-32 h-32 border border-brand-gold/50 rounded-full -z-10"></div>
+                </div>
+
+                <!-- Text -->
+                <div class="lg:col-span-7 fade-up" style="transition-delay: 100ms;">
+                    <span class="text-xs uppercase tracking-[0.2em] text-brand-taupe mb-4 block">Sobre mim</span>
+                    <h2 class="font-serif text-4xl md:text-5xl text-brand-charcoal mb-6 leading-tight">
+                        Sua beleza não precisa ser reinventada.
+                    </h2>
+
+                    <div class="flex flex-wrap gap-x-3 gap-y-2 text-xs uppercase tracking-widest text-brand-taupe mb-8">
+                        <span class="border border-brand-sand rounded-full px-4 py-1.5">Cirurgiã-Dentista · UERJ</span>
+                        <span class="border border-brand-sand rounded-full px-4 py-1.5">Pós em Saúde da Família</span>
+                        <span class="border border-brand-sand rounded-full px-4 py-1.5">Esp. Harmonização Orofacial</span>
+                    </div>
+
+                    <div class="space-y-5 text-brand-brown font-light leading-relaxed text-lg">
+                        <p>
+                            Sou cirurgiã-dentista graduada pela UERJ, pós-graduada em Saúde da Família e especialista em Harmonização Orofacial. Mais do que transformar rostos, a minha verdadeira missão é resgatar a sua melhor versão.
+                        </p>
+                        <p>
+                            Acredito em uma beleza que não deforma, mas que realça. Por isso, meu trabalho é totalmente focado na naturalidade, elegância e segurança. Cada procedimento é planejado de forma única, respeitando a sua identidade e promovendo um gerenciamento inteligente do envelhecimento.
+                        </p>
+                        <p>
+                            Aqui, o cuidado começa no acolhimento. Estou pronta para te ajudar a sorrir e a se olhar no espelho com ainda mais orgulho.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- COMO EU TRABALHO -->
+    <section class="py-section bg-brand-offwhite border-t border-brand-sand relative overflow-hidden">
+        <!-- Subtle abstract line bg -->
+        <svg class="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M0,50 Q25,20 50,50 T100,50" stroke="#6B5541" stroke-width="0.5" fill="none" />
+            <path d="M0,60 Q30,80 60,60 T100,60" stroke="#6B5541" stroke-width="0.3" fill="none" />
+        </svg>
+
+        <div class="container mx-auto px-6 md:px-12 relative z-10">
+            <div class="mb-16 md:mb-24 fade-up">
+                <span class="text-xs uppercase tracking-[0.2em] text-brand-taupe mb-4 block">Abordagem</span>
+                <h2 class="font-serif text-4xl md:text-5xl text-brand-charcoal">
+                    Cada rosto pede um olhar diferente.
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+                <!-- Passo 1 -->
+                <div class="relative fade-up" style="transition-delay: 100ms;">
+                    <div class="text-5xl font-serif text-brand-sand opacity-60 mb-4 absolute -top-8 -left-4 -z-10">01</div>
+                    <h3 class="font-serif text-2xl text-brand-charcoal mb-4 border-b border-brand-sand pb-4">Avaliação</h3>
+                    <p class="text-brand-brown font-light leading-relaxed">
+                        Tudo começa com uma avaliação presencial e minuciosa. Compreender características, proporções, necessidades e expectativas antes de definir qualquer procedimento.
+                    </p>
+                </div>
+
+                <!-- Passo 2 -->
+                <div class="relative fade-up" style="transition-delay: 200ms;">
+                    <div class="text-5xl font-serif text-brand-sand opacity-60 mb-4 absolute -top-8 -left-4 -z-10">02</div>
+                    <h3 class="font-serif text-2xl text-brand-charcoal mb-4 border-b border-brand-sand pb-4">Planejamento</h3>
+                    <p class="text-brand-brown font-light leading-relaxed">
+                        Nada é feito de forma automática. Cada ponto e cada escolha são planejados de acordo com a anatomia e as características individuais.
+                    </p>
+                </div>
+
+                <!-- Passo 3 -->
+                <div class="relative fade-up" style="transition-delay: 300ms;">
+                    <div class="text-5xl font-serif text-brand-sand opacity-60 mb-4 absolute -top-8 -left-4 -z-10">03</div>
+                    <h3 class="font-serif text-2xl text-brand-charcoal mb-4 border-b border-brand-sand pb-4">Tratamento</h3>
+                    <p class="text-brand-brown font-light leading-relaxed">
+                        O objetivo é valorizar, não descaracterizar. A execução busca equilíbrio e naturalidade, respeitando os traços originais.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRATAMENTOS — editorial list, sem cards -->
+    <section id="tratamentos" class="py-section bg-brand-white">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row gap-12 mb-16 fade-up">
+                <div class="w-full md:w-1/3">
+                    <h2 class="font-serif text-4xl md:text-5xl text-brand-charcoal leading-tight">
+                        Harmonização<br>Orofacial
+                    </h2>
+                </div>
+                <div class="w-full md:w-2/3 md:pl-12 border-l border-brand-sand">
+                    <p class="text-lg md:text-xl text-brand-brown font-light leading-relaxed">
+                        Procedimentos planejados para valorizar diferentes aspectos da face, sempre considerando proporção, anatomia e individualidade.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tratamentos -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Bioestimuladores -->
+                <div class="p-8 bg-brand-offwhite border-t-2 border-brand-gold rounded-sm fade-up" style="transition-delay: 100ms;">
+                    <h3 class="font-serif text-2xl text-brand-charcoal mb-3">Bioestimuladores</h3>
+                    <p class="text-brand-brown font-light leading-relaxed text-sm">
+                        Procedimentos voltados ao estímulo de colágeno e à melhora da firmeza e qualidade da pele, dentro de um planejamento individualizado.
+                    </p>
+                </div>
+
+                <!-- Ácido Hialurônico -->
+                <div class="p-8 bg-brand-offwhite border-t-2 border-brand-gold rounded-sm fade-up" style="transition-delay: 200ms;">
+                    <h3 class="font-serif text-2xl text-brand-charcoal mb-3">Ácido Hialurônico</h3>
+                    <p class="text-brand-brown font-light leading-relaxed text-sm">
+                        Utilizado de forma estratégica para trabalhar proporções e contornos, podendo contribuir para alinhamento do perfil, projeção do queixo e definição sutil dos lábios.
+                    </p>
+                </div>
+
+                <!-- Toxina Botulínica -->
+                <div class="p-8 bg-brand-offwhite border-t-2 border-brand-gold rounded-sm fade-up" style="transition-delay: 300ms;">
+                    <h3 class="font-serif text-2xl text-brand-charcoal mb-3">Toxina Botulínica</h3>
+                    <p class="text-brand-brown font-light leading-relaxed text-sm">
+                        Aplicação planejada para suavizar linhas de expressão, preservando a naturalidade dos movimentos e da expressão facial.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRECISÃO & MATERIAIS -->
+    <section class="py-section-sm bg-brand-charcoal text-brand-offwhite">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+                <div class="fade-up">
+                    <span class="text-xs uppercase tracking-[0.2em] text-brand-taupe mb-4 block">Técnica & Estudo</span>
+                    <h2 class="font-serif text-4xl md:text-5xl mb-6 text-brand-beige">
+                        Precisão começa antes do procedimento.
+                    </h2>
+                    <p class="text-brand-sand font-light leading-relaxed mb-6 opacity-90">
+                        Uma harmonização bem planejada começa muito antes da aplicação. É preciso observar proporções, estruturas, características individuais e aquilo que torna cada rosto único.
+                    </p>
+                    <p class="text-brand-sand font-light leading-relaxed opacity-90">
+                        A escolha dos materiais e a compreensão da anatomia fazem parte de uma abordagem que prioriza planejamento e naturalidade.
+                    </p>
+                </div>
+
+                <div class="bg-brand-white/5 p-8 md:p-12 border border-brand-white/10 rounded-sm fade-up" style="transition-delay: 200ms;">
+                    <h3 class="font-serif text-2xl text-brand-beige mb-6">Cuidado também está nos detalhes.</h3>
+                    <p class="font-light text-brand-sand mb-8 text-sm opacity-90 leading-relaxed">
+                        A escolha dos materiais e a atenção à sua procedência fazem parte de um atendimento responsável e cuidadoso.
+                    </p>
+                    <ul class="space-y-4 font-serif text-xl text-brand-offwhite">
+                        <li class="flex items-center gap-4 border-b border-brand-white/10 pb-3">
+                            <i class="fa-solid fa-check text-brand-gold text-sm"></i> Procedência
+                        </li>
+                        <li class="flex items-center gap-4 border-b border-brand-white/10 pb-3">
+                            <i class="fa-solid fa-check text-brand-gold text-sm"></i> Planejamento
+                        </li>
+                        <li class="flex items-center gap-4 border-b border-brand-white/10 pb-3">
+                            <i class="fa-solid fa-check text-brand-gold text-sm"></i> Anatomia
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fa-solid fa-check text-brand-gold text-sm"></i> Individualidade
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTADOS (CRITICAL SECTION) -->
+    <section id="resultados" class="py-section bg-brand-offwhite">
+        <div class="container mx-auto px-6 md:px-12">
+
+            <div class="max-w-3xl mx-auto text-center mb-16 md:mb-20 fade-up">
+                <span class="text-xs uppercase tracking-[0.2em] text-brand-taupe mb-4 block">Casos Clínicos</span>
+                <h2 class="font-serif text-4xl md:text-5xl text-brand-charcoal mb-6">
+                    Resultados que respeitam a sua essência.
+                </h2>
+                <div class="w-16 h-px bg-brand-gold mx-auto mb-6"></div>
+                <p class="text-brand-brown font-light leading-relaxed">
+                    Cada rosto possui características únicas. Os resultados apresentados refletem um trabalho planejado de forma individual, buscando valorizar os traços de cada paciente com naturalidade, equilíbrio e elegância.
+                </p>
+            </div>
+
+            <!-- DESKTOP / TABLET — Uniform Editorial Grid -->
+            <div class="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+                <div class="fade-up">
+                    <div class="aspect-[4/5] overflow-hidden rounded-sm img-container cursor-pointer" onclick="openLightbox(this)">
+                        <img src="antes-depois-1.jpg" alt="Resultado de Harmonização Orofacial mostrando antes e depois, valorizando a naturalidade do rosto." class="w-full h-full object-cover object-top img-editorial" loading="lazy">
+                    </div>
+                    <p class="text-center text-xs tracking-widest text-brand-taupe mt-6 uppercase">Resultado Individualizado</p>
+                </div>
+
+                <div class="fade-up">
+                    <div class="aspect-[4/5] overflow-hidden rounded-sm img-container cursor-pointer" onclick="openLightbox(this)">
+                        <img src="antes-depois-2.jpg" alt="Resultado de Harmonização Orofacial focado no perfil." class="w-full h-full object-cover object-top img-editorial" loading="lazy">
+                    </div>
+                    <p class="text-center text-xs tracking-widest text-brand-taupe mt-6 uppercase">Planejamento de Perfil</p>
+                </div>
+
+                <div class="fade-up" style="transition-delay: 100ms;">
+                    <div class="aspect-[4/5] overflow-hidden rounded-sm img-container cursor-pointer" onclick="openLightbox(this)">
+                        <img src="antes-depois-3.jpg" alt="Resultado mostrando cuidado com os traços individuais." class="w-full h-full object-cover object-top img-editorial" loading="lazy">
+                    </div>
+                    <p class="text-center text-xs tracking-widest text-brand-taupe mt-6 uppercase">Valorização de Traços</p>
+                </div>
+
+                <div class="fade-up" style="transition-delay: 100ms;">
+                    <div class="aspect-[4/5] overflow-hidden rounded-sm img-container cursor-pointer" onclick="openLightbox(this)">
+                        <img src="antes-depois-4.jpg" alt="Resultado de tratamento frontal." class="w-full h-full object-cover object-top img-editorial" loading="lazy">
+                    </div>
+                    <p class="text-center text-xs tracking-widest text-brand-taupe mt-6 uppercase">Equilíbrio Facial</p>
+                </div>
+
+                <div class="fade-up" style="transition-delay: 200ms;">
+                    <div class="aspect-[4/5] overflow-hidden rounded-sm img-container cursor-pointer" onclick="openLightbox(this)">
+                        <img src="antes-depois-5.jpg" alt="Resultado de tratamento de perfil focando em contornos." class="w-full h-full object-cover object-top img-editorial" loading="lazy">
+                    </div>
+                    <p class="text-center text-xs tracking-widest text-brand-taupe mt-6 uppercase">Contorno e Proporção</p>
+                </div>
+
+                <div class="fade-up" style="transition-delay: 200ms;">
+                    <div class="aspect-[4/5] overflow-hidden rounded-sm img-container cursor-pointer" onclick="openLightbox(this)">
+                        <img src="antes-depois-6.jpg" alt="Resultado de Harmonização Orofacial evidenciando suavidade e naturalidade." class="w-full h-full object-cover object-top img-editorial" loading="lazy">
+                    </div>
+                    <p class="text-center text-xs tracking-widest text-brand-taupe mt-6 uppercase">Naturalidade e Equilíbrio</p>
+                </div>
+            </div>
+
+            <!-- MOBILE — Swipeable Carousel -->
+            <div class="md:hidden fade-up">
+                <div class="relative">
+                    <div id="results-carousel" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-5 -mx-6 px-6 pb-2 no-scrollbar">
+                        <div class="carousel-slide snap-center shrink-0 w-[75vw]">
+                            <div class="aspect-[4/5] overflow-hidden rounded-sm cursor-pointer" onclick="openLightbox(this)">
+                                <img src="antes-depois-1.jpg" alt="Resultado de Harmonização Orofacial mostrando antes e depois, valorizando a naturalidade do rosto." class="w-full h-full object-cover object-top" loading="lazy">
+                            </div>
+                            <p class="text-center text-xs tracking-widest text-brand-taupe mt-4 uppercase">Resultado Individualizado</p>
+                        </div>
+                        <div class="carousel-slide snap-center shrink-0 w-[75vw]">
+                            <div class="aspect-[4/5] overflow-hidden rounded-sm cursor-pointer" onclick="openLightbox(this)">
+                                <img src="antes-depois-2.jpg" alt="Resultado de Harmonização Orofacial focado no perfil." class="w-full h-full object-cover object-top" loading="lazy">
+                            </div>
+                            <p class="text-center text-xs tracking-widest text-brand-taupe mt-4 uppercase">Planejamento de Perfil</p>
+                        </div>
+                        <div class="carousel-slide snap-center shrink-0 w-[75vw]">
+                            <div class="aspect-[4/5] overflow-hidden rounded-sm cursor-pointer" onclick="openLightbox(this)">
+                                <img src="antes-depois-3.jpg" alt="Resultado mostrando cuidado com os traços individuais." class="w-full h-full object-cover object-top" loading="lazy">
+                            </div>
+                            <p class="text-center text-xs tracking-widest text-brand-taupe mt-4 uppercase">Valorização de Traços</p>
+                        </div>
+                        <div class="carousel-slide snap-center shrink-0 w-[75vw]">
+                            <div class="aspect-[4/5] overflow-hidden rounded-sm cursor-pointer" onclick="openLightbox(this)">
+                                <img src="antes-depois-4.jpg" alt="Resultado de tratamento frontal." class="w-full h-full object-cover object-top" loading="lazy">
+                            </div>
+                            <p class="text-center text-xs tracking-widest text-brand-taupe mt-4 uppercase">Equilíbrio Facial</p>
+                        </div>
+                        <div class="carousel-slide snap-center shrink-0 w-[75vw]">
+                            <div class="aspect-[4/5] overflow-hidden rounded-sm cursor-pointer" onclick="openLightbox(this)">
+                                <img src="antes-depois-5.jpg" alt="Resultado de tratamento de perfil focando em contornos." class="w-full h-full object-cover object-top" loading="lazy">
+                            </div>
+                            <p class="text-center text-xs tracking-widest text-brand-taupe mt-4 uppercase">Contorno e Proporção</p>
+                        </div>
+                        <div class="carousel-slide snap-center shrink-0 w-[75vw]">
+                            <div class="aspect-[4/5] overflow-hidden rounded-sm cursor-pointer" onclick="openLightbox(this)">
+                                <img src="antes-depois-6.jpg" alt="Resultado de Harmonização Orofacial evidenciando suavidade e naturalidade." class="w-full h-full object-cover object-top" loading="lazy">
+                            </div>
+                            <p class="text-center text-xs tracking-widest text-brand-taupe mt-4 uppercase">Naturalidade e Equilíbrio</p>
+                        </div>
+                    </div>
+
+                    <!-- Arrows -->
+                    <button id="carousel-prev" class="carousel-arrow absolute left-1 top-[38%] -translate-y-1/2 w-9 h-9 rounded-full bg-brand-charcoal/70 text-brand-offwhite flex items-center justify-center" aria-label="Ver resultado anterior">
+                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                    </button>
+                    <button id="carousel-next" class="carousel-arrow absolute right-1 top-[38%] -translate-y-1/2 w-9 h-9 rounded-full bg-brand-charcoal/70 text-brand-offwhite flex items-center justify-center" aria-label="Ver próximo resultado">
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Dots -->
+                <div id="results-dots" class="flex justify-center items-center gap-2 mt-6">
+                    <button class="carousel-dot h-1.5 w-6 rounded-full bg-brand-gold" data-index="0" aria-label="Ver resultado 1"></button>
+                    <button class="carousel-dot h-1.5 w-1.5 rounded-full bg-brand-sand" data-index="1" aria-label="Ver resultado 2"></button>
+                    <button class="carousel-dot h-1.5 w-1.5 rounded-full bg-brand-sand" data-index="2" aria-label="Ver resultado 3"></button>
+                    <button class="carousel-dot h-1.5 w-1.5 rounded-full bg-brand-sand" data-index="3" aria-label="Ver resultado 4"></button>
+                    <button class="carousel-dot h-1.5 w-1.5 rounded-full bg-brand-sand" data-index="4" aria-label="Ver resultado 5"></button>
+                    <button class="carousel-dot h-1.5 w-1.5 rounded-full bg-brand-sand" data-index="5" aria-label="Ver resultado 6"></button>
+                </div>
+            </div>
+
+            <!-- Closing Text -->
+            <div class="max-w-2xl mx-auto text-center mt-20 md:mt-24 fade-up border-t border-brand-sand pt-12">
+                <p class="text-lg text-brand-brown font-serif italic mb-4">
+                    "Cada resultado começa com uma avaliação individual e um planejamento pensado para aquele rosto."
+                </p>
+                <p class="text-brand-charcoal font-medium">
+                    O objetivo não é criar um rosto diferente. É valorizar aquilo que já é seu.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-[60] bg-brand-charcoal/95 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4" aria-modal="true" role="dialog">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-brand-white hover:text-brand-gold transition-colors p-2" aria-label="Fechar galeria">
+            <i class="fa-solid fa-xmark text-3xl"></i>
+        </button>
+        <div class="max-w-5xl max-h-[90vh] w-full h-full flex items-center justify-center">
+            <img id="lightbox-img" src="" alt="Imagem ampliada do resultado" class="max-w-full max-h-full object-contain shadow-2xl rounded-sm">
+        </div>
+    </div>
+
+    <!-- EXPERIÊNCIA -->
+    <section class="py-section bg-brand-white">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="font-serif text-4xl md:text-5xl text-brand-charcoal">
+                    Um atendimento pensado para você.
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="border-t border-brand-taupe pt-6 fade-up" style="transition-delay: 100ms;">
+                    <h4 class="font-serif text-2xl text-brand-charcoal mb-3">Escuta</h4>
+                    <p class="text-brand-brown text-sm font-light leading-relaxed">Entender expectativas e particularidades.</p>
+                </div>
+                <div class="border-t border-brand-taupe pt-6 fade-up" style="transition-delay: 200ms;">
+                    <h4 class="font-serif text-2xl text-brand-charcoal mb-3">Avaliação</h4>
+                    <p class="text-brand-brown text-sm font-light leading-relaxed">Observar cuidadosamente características e proporções.</p>
+                </div>
+                <div class="border-t border-brand-taupe pt-6 fade-up" style="transition-delay: 300ms;">
+                    <h4 class="font-serif text-2xl text-brand-charcoal mb-3">Planejamento</h4>
+                    <p class="text-brand-brown text-sm font-light leading-relaxed">Definir uma estratégia individualizada.</p>
+                </div>
+                <div class="border-t border-brand-taupe pt-6 fade-up" style="transition-delay: 400ms;">
+                    <h4 class="font-serif text-2xl text-brand-charcoal mb-3">Cuidado</h4>
+                    <p class="text-brand-brown text-sm font-light leading-relaxed">Realizar o atendimento com atenção aos detalhes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NATURALIDADE STATEMENT -->
+    <section class="py-section-sm bg-brand-beige flex items-center justify-center relative overflow-hidden">
+        <div class="container mx-auto px-6 text-center z-10 fade-up">
+            <h2 class="font-serif text-4xl md:text-6xl text-brand-charcoal leading-tight mb-8">
+                Não é sobre fazer mais.<br>
+                <span class="italic text-brand-brown">É sobre fazer sentido.</span>
+            </h2>
+            <p class="text-brand-brown text-lg max-w-2xl mx-auto font-light leading-relaxed mb-4">
+                A estética mais sofisticada é aquela que respeita a identidade de quem a recebe.
+            </p>
+            <p class="text-brand-charcoal max-w-2xl mx-auto text-sm tracking-wide">
+                Por isso, cada escolha deve ter um propósito: valorizar, equilibrar e preservar a naturalidade.
+            </p>
+        </div>
+    </section>
+
+    <!-- MAIN CTA -->
+    <section class="py-section bg-brand-charcoal relative overflow-hidden">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+
+                <!-- Text -->
+                <div class="lg:col-span-7 text-center lg:text-left fade-up order-2 lg:order-1">
+                    <span class="text-xs uppercase tracking-[0.2em] text-brand-taupe mb-4 block">Agende sua avaliação</span>
+                    <h2 class="font-serif text-5xl md:text-6xl text-brand-offwhite mb-8 leading-tight">
+                        Vamos valorizar o que já é seu?
+                    </h2>
+                    <p class="text-xl text-brand-sand/90 font-light mb-10 max-w-md mx-auto lg:mx-0">
+                        Agende sua avaliação e converse sobre um planejamento pensado para você.
+                    </p>
+                    <a href="https://wa.me/5521983916437?text=Olá,%20acessei%20o%20site%20e%20gostaria%20de%20agendar%20uma%20avaliação%20com%20a%20Dra.%20Kênia." target="_blank" rel="noopener noreferrer" class="btn-gold inline-flex items-center gap-3 px-10 py-5 rounded-full text-base tracking-wider uppercase font-medium shadow-lg hover:shadow-xl">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Agende sua avaliação
+                    </a>
+                    <p class="text-xs text-brand-taupe uppercase tracking-widest mt-6">* Avaliação presencial</p>
+
+                    <div class="flex justify-center lg:justify-start items-center gap-4 text-xs tracking-widest uppercase text-brand-taupe mt-10">
+                        <span>CRO-RJ 58.138</span>
+                        <span class="w-1 h-1 rounded-full bg-brand-taupe"></span>
+                        <span>Duque de Caxias, RJ</span>
+                    </div>
+                </div>
+
+                <!-- Portrait -->
+                <div class="lg:col-span-5 relative order-1 lg:order-2 fade-up" style="transition-delay: 150ms;">
+                    <div class="relative aspect-[4/5] max-w-sm mx-auto overflow-hidden rounded-sm">
+                        <img src="kenia-2.jpg" alt="Dra. Kênia Evelyn" class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0 bg-brand-gold/10 mix-blend-multiply"></div>
+                    </div>
+                    <div class="hidden lg:block absolute -top-6 -left-6 w-24 h-24 border border-brand-gold/40 rounded-full -z-10"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ & INSTAGRAM -->
+    <section id="faq" class="py-section bg-brand-white border-t border-brand-sand">
+        <div class="container mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+            <!-- FAQ Section -->
+            <div class="fade-up">
+                <h2 class="font-serif text-3xl text-brand-charcoal mb-10">Dúvidas Frequentes</h2>
+
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="accordion-item border-b border-brand-sand">
+                        <button class="w-full py-4 text-left flex justify-between items-center focus:outline-none group" onclick="toggleAccordion(this)" aria-expanded="false">
+                            <span class="font-serif text-xl text-brand-brown group-hover:text-brand-charcoal transition-colors">Como funciona a avaliação?</span>
+                            <i class="fa-solid fa-plus text-brand-taupe accordion-icon text-sm"></i>
+                        </button>
+                        <div class="accordion-content text-brand-taupe font-light text-sm leading-relaxed">
+                            A avaliação é o primeiro momento para compreender suas características, expectativas e necessidades antes de definir qualquer planejamento.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="accordion-item border-b border-brand-sand">
+                        <button class="w-full py-4 text-left flex justify-between items-center focus:outline-none group" onclick="toggleAccordion(this)" aria-expanded="false">
+                            <span class="font-serif text-xl text-brand-brown group-hover:text-brand-charcoal transition-colors">Os procedimentos são definidos na primeira avaliação?</span>
+                            <i class="fa-solid fa-plus text-brand-taupe accordion-icon text-sm"></i>
+                        </button>
+                        <div class="accordion-content text-brand-taupe font-light text-sm leading-relaxed">
+                            A definição depende da avaliação individual e das características de cada caso.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="accordion-item border-b border-brand-sand">
+                        <button class="w-full py-4 text-left flex justify-between items-center focus:outline-none group" onclick="toggleAccordion(this)" aria-expanded="false">
+                            <span class="font-serif text-xl text-brand-brown group-hover:text-brand-charcoal transition-colors">O resultado fica natural?</span>
+                            <i class="fa-solid fa-plus text-brand-taupe accordion-icon text-sm"></i>
+                        </button>
+                        <div class="accordion-content text-brand-taupe font-light text-sm leading-relaxed">
+                            A proposta de trabalho valoriza a naturalidade, respeitando os traços e a anatomia de cada pessoa.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="accordion-item border-b border-brand-sand">
+                        <button class="w-full py-4 text-left flex justify-between items-center focus:outline-none group" onclick="toggleAccordion(this)" aria-expanded="false">
+                            <span class="font-serif text-xl text-brand-brown group-hover:text-brand-charcoal transition-colors">Quais procedimentos são realizados?</span>
+                            <i class="fa-solid fa-plus text-brand-taupe accordion-icon text-sm"></i>
+                        </button>
+                        <div class="accordion-content text-brand-taupe font-light text-sm leading-relaxed">
+                            A atuação inclui procedimentos de Harmonização Orofacial, como bioestimuladores, ácido hialurônico e toxina botulínica, conforme avaliação individual.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="accordion-item border-b border-brand-sand">
+                        <button class="w-full py-4 text-left flex justify-between items-center focus:outline-none group" onclick="toggleAccordion(this)" aria-expanded="false">
+                            <span class="font-serif text-xl text-brand-brown group-hover:text-brand-charcoal transition-colors">Onde é realizado o atendimento?</span>
+                            <i class="fa-solid fa-plus text-brand-taupe accordion-icon text-sm"></i>
+                        </button>
+                        <div class="accordion-content text-brand-taupe font-light text-sm leading-relaxed">
+                            Em Duque de Caxias, no Rio de Janeiro.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instagram Section -->
+            <div class="bg-brand-offwhite p-8 md:p-12 rounded-sm flex flex-col justify-center items-center text-center fade-up" style="transition-delay: 200ms;">
+                <i class="fa-brands fa-instagram text-4xl text-brand-taupe mb-6"></i>
+                <h3 class="font-serif text-3xl text-brand-charcoal mb-4">Acompanhe meu trabalho.</h3>
+                <p class="text-brand-brown font-light mb-8 max-w-sm">
+                    Conheça mais sobre meu trabalho, resultados e conteúdos sobre Harmonização Orofacial.
+                </p>
+                <a href="https://instagram.com/dra.keniaevelyn" target="_blank" rel="noopener noreferrer" class="btn-outline px-8 py-3 rounded-full text-sm tracking-wider uppercase font-medium">
+                    @dra.keniaevelyn
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-charcoal text-brand-offwhite py-12 border-t border-brand-taupe/30">
+        <div class="container mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+
+                <!-- Col 1 -->
+                <div>
+                    <h2 class="font-serif text-2xl mb-4 text-brand-beige">Dra. Kênia Evelyn</h2>
+                    <p class="text-brand-taupe text-sm font-light mb-1">Harmonização Orofacial</p>
+                    <p class="text-brand-taupe text-sm font-light mb-1">CRO-RJ 58.138</p>
+                    <p class="text-brand-taupe text-sm font-light">Duque de Caxias — RJ</p>
+                </div>
+
+                <!-- Col 2 -->
+                <div class="flex flex-col space-y-3">
+                    <a href="#inicio" class="text-brand-taupe hover:text-brand-gold transition-colors text-sm w-max">Início</a>
+                    <a href="#sobre" class="text-brand-taupe hover:text-brand-gold transition-colors text-sm w-max">Sobre</a>
+                    <a href="#tratamentos" class="text-brand-taupe hover:text-brand-gold transition-colors text-sm w-max">Tratamentos</a>
+                    <a href="#resultados" class="text-brand-taupe hover:text-brand-gold transition-colors text-sm w-max">Resultados</a>
+                    <a href="#faq" class="text-brand-taupe hover:text-brand-gold transition-colors text-sm w-max">FAQ</a>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <a href="https://wa.me/5521983916437?text=Olá,%20gostaria%20de%20falar%20com%20o%20atendimento." target="_blank" rel="noopener noreferrer" class="block text-brand-taupe hover:text-brand-gold transition-colors text-sm mb-3">
+                        <i class="fa-brands fa-whatsapp mr-2"></i> +55 21 98391-6437
+                    </a>
+                    <a href="https://instagram.com/dra.keniaevelyn" target="_blank" rel="noopener noreferrer" class="block text-brand-taupe hover:text-brand-gold transition-colors text-sm">
+                        <i class="fa-brands fa-instagram mr-2"></i> @dra.keniaevelyn
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="text-center border-t border-brand-white/10 pt-8 text-brand-taupe text-xs opacity-70">
+                <p>&copy; 2026 Dra. Kênia Evelyn. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/5521983916437?text=Olá,%20estou%20no%20site%20e%20gostaria%20de%20agendar%20uma%20avaliação." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="fixed bottom-6 right-6 z-40 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center group"
+       aria-label="Agendar via WhatsApp">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <!-- Tooltip -->
+        <span class="absolute right-full mr-4 bg-brand-charcoal text-brand-white text-xs px-3 py-1.5 rounded-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none hidden md:block">
+            Agende sua avaliação
+        </span>
+    </a>
+
+    <!-- SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1a. Header shadow on scroll — cheap, throttled via requestAnimationFrame
+            const header = document.getElementById('main-header');
+            let headerTicking = false;
+            window.addEventListener('scroll', () => {
+                if (!headerTicking) {
+                    window.requestAnimationFrame(() => {
+                        header.classList.toggle('scrolled', window.scrollY > 50);
+                        headerTicking = false;
+                    });
+                    headerTicking = true;
+                }
+            }, { passive: true });
+
+            // 1b. Fade-up reveal — IntersectionObserver (no layout thrashing on scroll)
+            const fadeElements = document.querySelectorAll('.fade-up');
+            if ('IntersectionObserver' in window) {
+                const revealObserver = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
+                fadeElements.forEach(el => revealObserver.observe(el));
+            } else {
+                // Fallback for very old browsers
+                fadeElements.forEach(el => el.classList.add('visible'));
+            }
+
+            // 2. Mobile Menu Toggle
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            let menuOpen = false;
+
+            const toggleMenu = () => {
+                menuOpen = !menuOpen;
+                if (menuOpen) {
+                    menuBtn.classList.add('open');
+                    mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                    mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                } else {
+                    menuBtn.classList.remove('open');
+                    mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
+                    mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                    document.body.style.overflow = '';
+                }
+            };
+
+            menuBtn.addEventListener('click', toggleMenu);
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+
+            // Lightbox Keyboard Support (Escape key)
+            document.addEventListener('keydown', (e) => {
+                if(e.key === 'Escape') closeLightbox();
+            });
+
+            // 5. Results Carousel (mobile) — dots + prev/next arrows
+            const carousel = document.getElementById('results-carousel');
+            if (carousel) {
+                const dots = Array.from(document.querySelectorAll('#results-dots .carousel-dot'));
+                const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+                const prevBtn = document.getElementById('carousel-prev');
+                const nextBtn = document.getElementById('carousel-next');
+                let currentIndex = 0;
+
+                const setActiveDot = (index) => {
+                    dots.forEach((dot, i) => {
+                        if (i === index) {
+                            dot.classList.remove('w-1.5', 'bg-brand-sand');
+                            dot.classList.add('w-6', 'bg-brand-gold');
+                        } else {
+                            dot.classList.remove('w-6', 'bg-brand-gold');
+                            dot.classList.add('w-1.5', 'bg-brand-sand');
+                        }
+                    });
+                    if (prevBtn) prevBtn.disabled = index === 0;
+                    if (nextBtn) nextBtn.disabled = index === slides.length - 1;
+                };
+
+                const goToSlide = (index) => {
+                    const clamped = Math.max(0, Math.min(index, slides.length - 1));
+                    const slide = slides[clamped];
+                    if (slide) {
+                        carousel.scrollTo({ left: slide.offsetLeft - 24, behavior: 'smooth' });
+                        currentIndex = clamped;
+                        setActiveDot(clamped);
+                    }
+                };
+
+                let scrollTimeout;
+                carousel.addEventListener('scroll', () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        const slideWidth = slides[0].getBoundingClientRect().width + 20; // includes gap
+                        const index = Math.round(carousel.scrollLeft / slideWidth);
+                        currentIndex = Math.min(Math.max(index, 0), dots.length - 1);
+                        setActiveDot(currentIndex);
+                    }, 80);
+                }, { passive: true });
+
+                dots.forEach((dot) => {
+                    dot.addEventListener('click', () => goToSlide(parseInt(dot.dataset.index, 10)));
+                });
+
+                if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+                if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+                setActiveDot(0);
+            }
+        });
+
+        // 3. Accordion Logic
+        function toggleAccordion(button) {
+            const item = button.parentElement;
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+            // Close all others
+            document.querySelectorAll('.accordion-item').forEach(el => {
+                el.classList.remove('active');
+                el.querySelector('button').setAttribute('aria-expanded', 'false');
+            });
+
+            // Toggle current
+            if (!isExpanded) {
+                item.classList.add('active');
+                button.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        // 4. Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(element) {
+            const imgEl = element.querySelector('img');
+            if(imgEl) {
+                lightboxImg.src = imgEl.src;
+                lightboxImg.alt = imgEl.alt;
+                lightbox.classList.remove('hidden');
+                // Small delay to allow display:block to apply before changing opacity for transition
+                setTimeout(() => {
+                    lightbox.classList.remove('opacity-0');
+                    lightbox.classList.add('opacity-100');
+                }, 10);
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('opacity-100');
+            lightbox.classList.add('opacity-0');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightboxImg.src = '';
+                document.body.style.overflow = '';
+            }, 300); // match transition duration
+        }
+
+        // Close lightbox on clicking background
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

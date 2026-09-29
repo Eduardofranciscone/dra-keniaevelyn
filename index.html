@@ -209,6 +209,23 @@
             pointer-events: none;
         }
 
+
+        /* Services: hide broken-image icon while src is empty (placeholder shows behind) */
+        .service-img img[src=""] { opacity: 0; }
+        .service-card { transition: border-color 0.4s ease, transform 0.4s ease; }
+        .service-card:hover { border-color: rgba(173, 139, 85, 0.6); }
+        .service-card:hover .img-editorial { transform: scale(1.04); }
+
+
+        /* Services carousel */
+        .svc-track { display: flex; gap: 1.5rem; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; outline: none; }
+        .svc-track .service-card { flex: 0 0 100%; scroll-snap-align: start; }
+        @media (min-width: 768px)  { .svc-track .service-card { flex-basis: calc((100% - 1.5rem) / 2); } }
+        @media (min-width: 1024px) { .svc-track .service-card { flex-basis: calc((100% - 3rem) / 3); } }
+        .svc-arrow { transition: background-color 0.3s ease, color 0.3s ease; }
+        .svc-arrow:hover { background-color: #AD8B55; color: #FFFFFF; }
+        @media (prefers-reduced-motion: reduce) { .svc-track { scroll-behavior: auto; } }
+
         /* Respect Reduced Motion */
         @media (prefers-reduced-motion: reduce) {
             .fade-up {
@@ -270,8 +287,8 @@
             <nav class="hidden lg:flex items-center space-x-8">
                 <a href="#sobre" class="text-sm tracking-widest text-brand-charcoal hover:text-brand-taupe transition-colors">SOBRE</a>
                 <a href="#tratamentos" class="text-sm tracking-widest text-brand-charcoal hover:text-brand-taupe transition-colors">TRATAMENTOS</a>
+                <a href="#servicos" class="text-sm tracking-widest text-brand-charcoal hover:text-brand-taupe transition-colors">SERVIÇOS</a>
                 <a href="#resultados" class="text-sm tracking-widest text-brand-charcoal hover:text-brand-taupe transition-colors">RESULTADOS</a>
-                <a href="#faq" class="text-sm tracking-widest text-brand-charcoal hover:text-brand-taupe transition-colors">FAQ</a>
                 <a href="https://wa.me/5521983916437?text=Olá,%20gostaria%20de%20agendar%20uma%20avaliação%20com%20a%20Dra.%20Kênia." target="_blank" rel="noopener noreferrer" class="btn-gold px-6 py-2.5 rounded-full text-sm tracking-wider uppercase font-medium">
                     Agende sua avaliação
                 </a>
@@ -290,8 +307,8 @@
             <nav class="flex flex-col items-center space-y-8">
                 <a href="#sobre" class="mobile-link text-2xl font-serif text-brand-charcoal">Sobre</a>
                 <a href="#tratamentos" class="mobile-link text-2xl font-serif text-brand-charcoal">Tratamentos</a>
+                <a href="#servicos" class="mobile-link text-2xl font-serif text-brand-charcoal">Serviços</a>
                 <a href="#resultados" class="mobile-link text-2xl font-serif text-brand-charcoal">Resultados</a>
-                <a href="#faq" class="mobile-link text-2xl font-serif text-brand-charcoal">FAQ</a>
                 <div class="pt-8">
                     <a href="https://wa.me/5521983916437?text=Olá,%20gostaria%20de%20agendar%20uma%20avaliação%20com%20a%20Dra.%20Kênia." target="_blank" rel="noopener noreferrer" class="btn-gold px-8 py-3 rounded-full text-sm tracking-wider uppercase font-medium block text-center">
                         Agende sua avaliação
@@ -355,45 +372,64 @@
     </div>
 
     <!-- FILOSOFIA / SOBRE -->
-    <section id="sobre" class="py-section bg-brand-white">
+    <section id="sobre" class="py-section-sm md:py-section bg-brand-white">
         <div class="container mx-auto px-6 md:px-12">
-            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start max-w-6xl mx-auto">
 
                 <!-- Portrait -->
-                <div class="lg:col-span-5 relative fade-up">
-                    <div class="relative aspect-[4/5] max-w-md mx-auto lg:max-w-none overflow-hidden rounded-sm img-container">
-                        <img src="kenia.jpg" alt="Dra. Kênia Evelyn, cirurgiã-dentista e especialista em Harmonização Orofacial" class="w-full h-full object-cover object-top img-editorial">
+                <div class="lg:col-span-5 relative fade-up lg:sticky lg:top-28">
+                    <div class="relative aspect-[4/5] max-w-sm mx-auto lg:max-w-none overflow-hidden rounded-sm img-container">
+                        <img src="kenya-sobre.png" alt="Dra. Kênia Evelyn, cirurgiã-dentista e especialista em Harmonização Orofacial" class="w-full h-full object-cover object-top img-editorial">
                     </div>
                     <div class="hidden lg:block absolute -bottom-6 -right-6 w-32 h-32 border border-brand-gold/50 rounded-full -z-10"></div>
                 </div>
 
                 <!-- Text -->
                 <div class="lg:col-span-7 fade-up" style="transition-delay: 100ms;">
-                    <span class="text-xs uppercase tracking-[0.2em] text-brand-taupe mb-4 block">Sobre mim</span>
-                    <h2 class="font-serif text-4xl md:text-5xl text-brand-charcoal mb-6 leading-tight">
-                        Sua beleza não precisa ser reinventada.
-                    </h2>
+                    <span class="text-xs uppercase tracking-[0.2em] text-brand-taupe mb-3 block">Sobre mim</span>
+                    <p class="font-serif italic text-xl md:text-2xl text-brand-gold mb-5">Muito prazer, sou Kênia Evelyn.</p>
 
-                    <div class="flex flex-wrap gap-x-3 gap-y-2 text-xs uppercase tracking-widest text-brand-taupe mb-8">
-                        <span class="border border-brand-sand rounded-full px-4 py-1.5">Cirurgiã-Dentista · UERJ</span>
-                        <span class="border border-brand-sand rounded-full px-4 py-1.5">Pós em Saúde da Família</span>
-                        <span class="border border-brand-sand rounded-full px-4 py-1.5">Esp. Harmonização Orofacial</span>
+                    <div class="flex flex-wrap gap-x-2 gap-y-2 text-[10px] md:text-[11px] uppercase tracking-widest text-brand-taupe mb-6">
+                        <span class="border border-brand-sand rounded-full px-3 py-1.5">Cirurgiã-Dentista · UERJ</span>
+                        <span class="border border-brand-sand rounded-full px-3 py-1.5">Pós em Saúde da Família</span>
+                        <span class="border border-brand-sand rounded-full px-3 py-1.5">Esp. Harmonização Orofacial</span>
                     </div>
 
-                    <!-- Ajustado aqui: text-sm no mobile e justificado apenas no mobile -->
-                    <div class="space-y-5 text-brand-brown font-light leading-relaxed text-sm md:text-lg text-justify md:text-left">
+                    <div class="space-y-3.5 text-brand-brown font-light leading-[1.7] text-[0.9rem] md:text-[0.95rem] text-left">
                         <p>
-                            Sou cirurgiã-dentista graduada pela UERJ, pós-graduada em Saúde da Família e especialista em Harmonização Orofacial. Mais do que transformar rostos, a minha verdadeira missão é resgatar a sua melhor versão.
+                            Mulher, mãe, esposa, católica e militar de carreira 2º Sargento da Aeronáutica.
                         </p>
                         <p>
-                            Acredito em uma beleza que não deforma, mas que realça. Por isso, meu trabalho é totalmente focado na naturalidade, elegância e segurança. Cada procedimento é planejado de forma única, respeitando a sua identidade e promovendo um gerenciamento inteligente do envelhecimento.
+                            Sou Bacharel em Odontologia, atuo como Cirurgiã-Dentista especialista em Harmonização Orofacial e sou Pós-graduada em Saúde da Família. Apaixonada pelo que faço.
                         </p>
                         <p>
-                            Aqui, o cuidado começa no acolhimento. Estou pronta para te ajudar a sorrir e a se olhar no espelho com ainda mais orgulho.
+                            Sou guiada pela fé, disciplina e determinação em cada passo da minha jornada. Vaidosa, sensível e humana, acredito que a beleza vai muito além da estética: é expressão de cuidado, amor-próprio e autoestima.
+                        </p>
+                        <p>
+                            Apaixonada pela estética e pelos detalhes, sou perfeccionista em tudo o que entrego e profundamente dedicada a cada transformação que realizo. Amo trabalhar com naturalidade, elegância e segurança.
+                        </p>
+                        <p>
+                            Amo a vida e viver em movimento. Meus hobbies são corrida, musculação e boxe. Cuidar da mente, da alma e do corpo se tornou um prazer, algo que me faz imensamente feliz, assim como estar perto de quem amo.
+                        </p>
+                        <p>
+                            Carrego comigo a leveza de quem valoriza os momentos e a força de quem nunca desiste dos seus sonhos.
+                        </p>
+                        <p class="font-serif text-lg md:text-xl text-brand-charcoal pt-1">
+                            Essa sou eu: inteira, intensa e apaixonada pela vida. 💫
                         </p>
                     </div>
                 </div>
 
+            </div>
+
+            <!-- Fechamento centralizado -->
+            <div class="max-w-2xl mx-auto mt-14 md:mt-20 pt-10 md:pt-12 border-t border-brand-sand text-center fade-up">
+                <p class="font-serif italic text-xl md:text-2xl text-brand-brown mb-7 leading-snug">
+                    ✨ Vamos juntas construir a sua melhor versão e elevar a sua autoestima? 🪄🦷
+                </p>
+                <a href="https://wa.me/5521983916437?text=Ol%C3%A1%2C%20Dra.%20K%C3%AAnia!%20Vi%20o%20site%20e%20quero%20construir%20a%20minha%20melhor%20vers%C3%A3o.%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="btn-gold inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-sm tracking-wider uppercase font-medium">
+                    <i class="fa-brands fa-whatsapp text-base"></i> Vamos juntas?
+                </a>
             </div>
         </div>
     </section>
@@ -490,45 +526,325 @@
         </div>
     </section>
 
-    <!-- PRECISÃO & MATERIAIS -->
-    <section class="py-section-sm bg-brand-charcoal text-brand-offwhite">
-        <div class="container mx-auto px-6 md:px-12">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="py-section-sm md:py-section bg-brand-charcoal text-brand-offwhite relative overflow-hidden">
+        <div class="container mx-auto px-6 md:px-12 relative z-10">
 
-                <div class="fade-up">
-                    <span class="text-xs uppercase tracking-[0.2em] text-brand-taupe mb-4 block">Técnica & Estudo</span>
-                    <h2 class="font-serif text-4xl md:text-5xl mb-6 text-brand-beige">
-                        Precisão começa antes do procedimento.
-                    </h2>
-                    <p class="text-brand-sand font-light leading-relaxed mb-6 opacity-90">
-                        Uma harmonização bem planejada começa muito antes da aplicação. É preciso observar proporções, estruturas, características individuais e aquilo que torna cada rosto único.
-                    </p>
-                    <p class="text-brand-sand font-light leading-relaxed opacity-90">
-                        A escolha dos materiais e a compreensão da anatomia fazem parte de uma abordagem que prioriza planejamento e naturalidade.
-                    </p>
+            <div class="max-w-3xl mb-12 md:mb-16 fade-up">
+                <span class="text-xs uppercase tracking-[0.3em] text-brand-taupe mb-4 block">Serviços</span>
+                <h2 class="font-serif text-4xl md:text-5xl mb-6 text-brand-beige leading-tight">
+                    Tratamentos pensados para o seu rosto.
+                </h2>
+                <div class="w-12 h-px bg-brand-gold mb-6"></div>
+                <p class="text-brand-sand font-light leading-relaxed opacity-90 md:text-lg">
+                    Cada procedimento é planejado de forma individual, respeitando sua anatomia e valorizando a sua beleza natural.
+                </p>
+            </div>
+
+            <!-- Carrossel: 3 por vez no desktop, 2 no tablet, 1 no celular -->
+            <div class="fade-up">
+            <div id="svc-track" class="svc-track no-scrollbar" tabindex="0" aria-label="Carrossel de serviços">
+
+                <!-- 01. Protocolo Full Face -->
+                <article class="service-card flex flex-col bg-brand-white/[0.04] border border-brand-white/10 rounded-sm overflow-hidden">
+                    <!-- Espaço da imagem: coloque a URL no src do <img> -->
+                    <div class="service-img relative aspect-[8/5] overflow-hidden bg-gradient-to-br from-brand-brown/40 to-brand-charcoal">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 text-brand-taupe/60 pointer-events-none">
+                            <i class="fa-regular fa-image text-3xl"></i>
+                            <span class="text-[10px] uppercase tracking-[0.25em]">Imagem 01</span>
+                        </div>
+                        <img src="./full-face.png" alt="Protocolo Full Face" loading="lazy" class="img-editorial relative w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 font-serif text-sm tracking-[0.2em] text-brand-offwhite/90 bg-brand-charcoal/50 backdrop-blur-sm px-3 py-1 rounded-full">01</span>
+                        <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-brand-charcoal/60 to-transparent pointer-events-none"></div>
+                    </div>
+
+                    <div class="flex flex-col flex-1 p-6 md:p-7">
+                        <h3 class="font-serif text-2xl md:text-[1.65rem] leading-tight text-brand-beige mb-4 pb-4 border-b border-brand-gold/40">Protocolo Full Face</h3>
+                        <div class="space-y-3 text-sm text-brand-sand font-light leading-relaxed opacity-90 mb-7">
+                            <p>Um planejamento completo para harmonizar a face utilizando 6 a 10 ml de ácido hialurônico, distribuídos estrategicamente de acordo com as necessidades de cada rosto.</p>
+                            <p>O objetivo não é mudar quem você é. É reposicionar, equilibrar e valorizar sua beleza natural. ✨</p>
+                        </div>
+                        <a href="https://wa.me/5521983916437?text=Ol%C3%A1%2C%20Dra.%20K%C3%AAnia%21%20Vi%20o%20site%20e%20tenho%20interesse%20no%20Protocolo%20Full%20Face.%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="btn-gold mt-auto inline-flex items-center justify-center gap-3 w-full px-6 py-3.5 rounded-full text-xs tracking-wider uppercase font-medium">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Quero o Full Face
+                        </a>
+                    </div>
+                </article>
+                <!-- 02. Preenchimento Labial • Método K.Lips -->
+                <article class="service-card flex flex-col bg-brand-white/[0.04] border border-brand-white/10 rounded-sm overflow-hidden">
+                    <!-- Espaço da imagem: coloque a URL no src do <img> -->
+                    <div class="service-img relative aspect-[8/5] overflow-hidden bg-gradient-to-br from-brand-brown/40 to-brand-charcoal">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 text-brand-taupe/60 pointer-events-none">
+                            <i class="fa-regular fa-image text-3xl"></i>
+                            <span class="text-[10px] uppercase tracking-[0.25em]">Imagem 02</span>
+                        </div>
+                        <img src="./preenchimento-labial.png" alt="Preenchimento Labial • Método K.Lips" loading="lazy" class="img-editorial relative w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 font-serif text-sm tracking-[0.2em] text-brand-offwhite/90 bg-brand-charcoal/50 backdrop-blur-sm px-3 py-1 rounded-full">02</span>
+                        <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-brand-charcoal/60 to-transparent pointer-events-none"></div>
+                    </div>
+
+                    <div class="flex flex-col flex-1 p-6 md:p-7">
+                        <h3 class="font-serif text-2xl md:text-[1.65rem] leading-tight text-brand-beige mb-4 pb-4 border-b border-brand-gold/40">Preenchimento Labial • Método K.Lips</h3>
+                        <div class="space-y-3 text-sm text-brand-sand font-light leading-relaxed opacity-90 mb-7">
+                            <p>Um método criado por mim específico e personalizado realizado com ácido hialurônico que proporciona mais volume, hidratação, contorno e definição aos lábios, mantendo a naturalidade e a harmonia facial.</p>
+                            <p>O resultado é imediato e personalizado de acordo com o formato e o desejo de cada paciente. ✨</p>
+                        </div>
+                        <a href="https://wa.me/5521983916437?text=Ol%C3%A1%2C%20Dra.%20K%C3%AAnia%21%20Vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20Preenchimento%20Labial%20pelo%20M%C3%A9todo%20K.Lips.%20Podemos%20agendar%20uma%20avalia%C3%A7%C3%A3o%3F" target="_blank" rel="noopener noreferrer" class="btn-gold mt-auto inline-flex items-center justify-center gap-3 w-full px-6 py-3.5 rounded-full text-xs tracking-wider uppercase font-medium">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Quero o K.Lips
+                        </a>
+                    </div>
+                </article>
+                <!-- 03. Perfiloplastia -->
+                <article class="service-card flex flex-col bg-brand-white/[0.04] border border-brand-white/10 rounded-sm overflow-hidden">
+                    <!-- Espaço da imagem: coloque a URL no src do <img> -->
+                    <div class="service-img relative aspect-[8/5] overflow-hidden bg-gradient-to-br from-brand-brown/40 to-brand-charcoal">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 text-brand-taupe/60 pointer-events-none">
+                            <i class="fa-regular fa-image text-3xl"></i>
+                            <span class="text-[10px] uppercase tracking-[0.25em]">Imagem 03</span>
+                        </div>
+                        <img src="./perfiloplastia.png" alt="Perfiloplastia" loading="lazy" class="img-editorial relative w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 font-serif text-sm tracking-[0.2em] text-brand-offwhite/90 bg-brand-charcoal/50 backdrop-blur-sm px-3 py-1 rounded-full">03</span>
+                        <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-brand-charcoal/60 to-transparent pointer-events-none"></div>
+                    </div>
+
+                    <div class="flex flex-col flex-1 p-6 md:p-7">
+                        <h3 class="font-serif text-2xl md:text-[1.65rem] leading-tight text-brand-beige mb-4 pb-4 border-b border-brand-gold/40">Perfiloplastia</h3>
+                        <div class="space-y-3 text-sm text-brand-sand font-light leading-relaxed opacity-90 mb-7">
+                            <p>A perfiloplastia é um conjunto de procedimentos que busca harmonizar o perfil facial, equilibrando as proporções entre nariz, lábios, queixo e mandíbula.</p>
+                            <p>O tratamento é personalizado para cada paciente, valorizando a beleza natural e proporcionando mais equilíbrio e harmonia ao rosto. ✨</p>
+                        </div>
+                        <a href="https://wa.me/5521983916437?text=Ol%C3%A1%2C%20Dra.%20K%C3%AAnia%21%20Vi%20o%20site%20e%20tenho%20interesse%20na%20Perfiloplastia.%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20do%20meu%20perfil%20facial." target="_blank" rel="noopener noreferrer" class="btn-gold mt-auto inline-flex items-center justify-center gap-3 w-full px-6 py-3.5 rounded-full text-xs tracking-wider uppercase font-medium">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Quero harmonizar meu perfil
+                        </a>
+                    </div>
+                </article>
+                <!-- 04. Rinomodelação -->
+                <article class="service-card flex flex-col bg-brand-white/[0.04] border border-brand-white/10 rounded-sm overflow-hidden">
+                    <!-- Espaço da imagem: coloque a URL no src do <img> -->
+                    <div class="service-img relative aspect-[8/5] overflow-hidden bg-gradient-to-br from-brand-brown/40 to-brand-charcoal">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 text-brand-taupe/60 pointer-events-none">
+                            <i class="fa-regular fa-image text-3xl"></i>
+                            <span class="text-[10px] uppercase tracking-[0.25em]">Imagem 04</span>
+                        </div>
+                        <img src="./rinomodelacao.png" alt="Rinomodelação" loading="lazy" class="img-editorial relative w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 font-serif text-sm tracking-[0.2em] text-brand-offwhite/90 bg-brand-charcoal/50 backdrop-blur-sm px-3 py-1 rounded-full">04</span>
+                        <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-brand-charcoal/60 to-transparent pointer-events-none"></div>
+                    </div>
+
+                    <div class="flex flex-col flex-1 p-6 md:p-7">
+                        <h3 class="font-serif text-2xl md:text-[1.65rem] leading-tight text-brand-beige mb-4 pb-4 border-b border-brand-gold/40">Rinomodelação</h3>
+                        <div class="space-y-3 text-sm text-brand-sand font-light leading-relaxed opacity-90 mb-7">
+                            <p>A rinomodelação é um procedimento realizado com ácido hialurônico que corrige pequenas imperfeições do nariz sem cirurgia.</p>
+                            <p>Ela pode melhorar o contorno, alinhar o perfil e proporcionar mais harmonia facial, com resultados imediatos e naturais. ✨</p>
+                        </div>
+                        <a href="https://wa.me/5521983916437?text=Ol%C3%A1%2C%20Dra.%20K%C3%AAnia%21%20Vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20Rinomodela%C3%A7%C3%A3o.%20Podemos%20agendar%20uma%20avalia%C3%A7%C3%A3o%3F" target="_blank" rel="noopener noreferrer" class="btn-gold mt-auto inline-flex items-center justify-center gap-3 w-full px-6 py-3.5 rounded-full text-xs tracking-wider uppercase font-medium">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Quero saber sobre rinomodelação
+                        </a>
+                    </div>
+                </article>
+                <!-- 05. Bioestimulador de colágeno -->
+                <article class="service-card flex flex-col bg-brand-white/[0.04] border border-brand-white/10 rounded-sm overflow-hidden">
+                    <!-- Espaço da imagem: coloque a URL no src do <img> -->
+                    <div class="service-img relative aspect-[8/5] overflow-hidden bg-gradient-to-br from-brand-brown/40 to-brand-charcoal">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 text-brand-taupe/60 pointer-events-none">
+                            <i class="fa-regular fa-image text-3xl"></i>
+                            <span class="text-[10px] uppercase tracking-[0.25em]">Imagem 05</span>
+                        </div>
+                        <img src="./Bioestimulador-de-colágeno.png" alt="Bioestimulador de colágeno" loading="lazy" class="img-editorial relative w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 font-serif text-sm tracking-[0.2em] text-brand-offwhite/90 bg-brand-charcoal/50 backdrop-blur-sm px-3 py-1 rounded-full">05</span>
+                        <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-brand-charcoal/60 to-transparent pointer-events-none"></div>
+                    </div>
+
+                    <div class="flex flex-col flex-1 p-6 md:p-7">
+                        <h3 class="font-serif text-2xl md:text-[1.65rem] leading-tight text-brand-beige mb-4 pb-4 border-b border-brand-gold/40">Bioestimulador de colágeno</h3>
+                        <div class="space-y-3 text-sm text-brand-sand font-light leading-relaxed opacity-90 mb-7">
+                            <p>Tratamento que estimula a produção de colágeno e melhora progressivamente a firmeza, sustentação e qualidade da pele.</p>
+                            <p>Ideal para quem busca prevenção, rejuvenescimento e melhora da flacidez sem perder a naturalidade. ✨</p>
+                        </div>
+                        <a href="https://wa.me/5521983916437?text=Ol%C3%A1%2C%20Dra.%20K%C3%AAnia%21%20Vi%20o%20site%20e%20tenho%20interesse%20no%20Bioestimulador%20de%20col%C3%A1geno.%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="btn-gold mt-auto inline-flex items-center justify-center gap-3 w-full px-6 py-3.5 rounded-full text-xs tracking-wider uppercase font-medium">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Quero bioestimular
+                        </a>
+                    </div>
+                </article>
+                <!-- 06. Protocolo tratamento para Olheiras -->
+                <article class="service-card flex flex-col bg-brand-white/[0.04] border border-brand-white/10 rounded-sm overflow-hidden">
+                    <!-- Espaço da imagem: coloque a URL no src do <img> -->
+                    <div class="service-img relative aspect-[8/5] overflow-hidden bg-gradient-to-br from-brand-brown/40 to-brand-charcoal">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 text-brand-taupe/60 pointer-events-none">
+                            <i class="fa-regular fa-image text-3xl"></i>
+                            <span class="text-[10px] uppercase tracking-[0.25em]">Imagem 06</span>
+                        </div>
+                        <img src="./olheira.png" alt="Protocolo tratamento para Olheiras" loading="lazy" class="img-editorial relative w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 font-serif text-sm tracking-[0.2em] text-brand-offwhite/90 bg-brand-charcoal/50 backdrop-blur-sm px-3 py-1 rounded-full">06</span>
+                        <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-brand-charcoal/60 to-transparent pointer-events-none"></div>
+                    </div>
+
+                    <div class="flex flex-col flex-1 p-6 md:p-7">
+                        <h3 class="font-serif text-2xl md:text-[1.65rem] leading-tight text-brand-beige mb-4 pb-4 border-b border-brand-gold/40">Protocolo tratamento para Olheiras</h3>
+                        <div class="space-y-3 text-sm text-brand-sand font-light leading-relaxed opacity-90 mb-7">
+                            <p>O protocolo para olheiras é um tratamento personalizado que atua na melhora do aspecto escurecido, afundado e cansado da região dos olhos.</p>
+                            <p>A combinação de técnicas estimula a produção de colágeno, melhora a qualidade da pele e proporciona um olhar mais descansado, rejuvenescido e harmonioso. ✨</p>
+                        </div>
+                        <a href="https://wa.me/5521983916437?text=Ol%C3%A1%2C%20Dra.%20K%C3%AAnia%21%20Vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20Protocolo%20para%20Olheiras.%20Podemos%20agendar%20uma%20avalia%C3%A7%C3%A3o%3F" target="_blank" rel="noopener noreferrer" class="btn-gold mt-auto inline-flex items-center justify-center gap-3 w-full px-6 py-3.5 rounded-full text-xs tracking-wider uppercase font-medium">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Quero tratar minhas olheiras
+                        </a>
+                    </div>
+                </article>
+                <!-- 07. Correção facial pós trauma -->
+                <article class="service-card flex flex-col bg-brand-white/[0.04] border border-brand-white/10 rounded-sm overflow-hidden">
+                    <!-- Espaço da imagem: coloque a URL no src do <img> -->
+                    <div class="service-img relative aspect-[8/5] overflow-hidden bg-gradient-to-br from-brand-brown/40 to-brand-charcoal">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 text-brand-taupe/60 pointer-events-none">
+                            <i class="fa-regular fa-image text-3xl"></i>
+                            <span class="text-[10px] uppercase tracking-[0.25em]">Imagem 07</span>
+                        </div>
+                        <img src="./Correção-facial-pós-trauma.png" alt="Correção facial pós trauma" loading="lazy" class="img-editorial relative w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 font-serif text-sm tracking-[0.2em] text-brand-offwhite/90 bg-brand-charcoal/50 backdrop-blur-sm px-3 py-1 rounded-full">07</span>
+                        <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-brand-charcoal/60 to-transparent pointer-events-none"></div>
+                    </div>
+
+                    <div class="flex flex-col flex-1 p-6 md:p-7">
+                        <h3 class="font-serif text-2xl md:text-[1.65rem] leading-tight text-brand-beige mb-4 pb-4 border-b border-brand-gold/40">Correção facial pós trauma</h3>
+                        <div class="space-y-3 text-sm text-brand-sand font-light leading-relaxed opacity-90 mb-7">
+                            <p>A correção facial pós-trauma é um tratamento indicado para restaurar a harmonia e a estética da face após acidentes, cirurgias ou lesões.</p>
+                            <p>O procedimento é personalizado e pode ajudar a melhorar assimetrias, cicatrizes, perdas de volume e alterações nos contornos faciais, promovendo resultados naturais e maior autoestima. ✨</p>
+                        </div>
+                        <a href="https://wa.me/5521983916437?text=Ol%C3%A1%2C%20Dra.%20K%C3%AAnia%21%20Vi%20o%20site%20e%20tenho%20interesse%20na%20Corre%C3%A7%C3%A3o%20facial%20p%C3%B3s-trauma.%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="btn-gold mt-auto inline-flex items-center justify-center gap-3 w-full px-6 py-3.5 rounded-full text-xs tracking-wider uppercase font-medium">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Quero agendar avaliação
+                        </a>
+                    </div>
+                </article>
+                <!-- 08. Toxina Botulínica • Botox -->
+                <article class="service-card flex flex-col bg-brand-white/[0.04] border border-brand-white/10 rounded-sm overflow-hidden">
+                    <!-- Espaço da imagem: coloque a URL no src do <img> -->
+                    <div class="service-img relative aspect-[8/5] overflow-hidden bg-gradient-to-br from-brand-brown/40 to-brand-charcoal">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 text-brand-taupe/60 pointer-events-none">
+                            <i class="fa-regular fa-image text-3xl"></i>
+                            <span class="text-[10px] uppercase tracking-[0.25em]">Imagem 08</span>
+                        </div>
+                        <img src="./Toxina-Botulínica-Botox.png" alt="Toxina Botulínica • Botox" loading="lazy" class="img-editorial relative w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 font-serif text-sm tracking-[0.2em] text-brand-offwhite/90 bg-brand-charcoal/50 backdrop-blur-sm px-3 py-1 rounded-full">08</span>
+                        <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-brand-charcoal/60 to-transparent pointer-events-none"></div>
+                    </div>
+
+                    <div class="flex flex-col flex-1 p-6 md:p-7">
+                        <h3 class="font-serif text-2xl md:text-[1.65rem] leading-tight text-brand-beige mb-4 pb-4 border-b border-brand-gold/40">Toxina Botulínica • Botox</h3>
+                        <div class="space-y-3 text-sm text-brand-sand font-light leading-relaxed opacity-90 mb-7">
+                            <p>Para suavizar linhas de expressão e trazer um aspecto mais descansado e harmônico, preservando a naturalidade da face.</p>
+                            <p>Indicado para: testa, glabela, pés de galinha e pontos estratégicos de elevação e equilíbrio facial. ✨</p>
+                        </div>
+                        <a href="https://wa.me/5521983916437?text=Ol%C3%A1%2C%20Dra.%20K%C3%AAnia%21%20Vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20Toxina%20Botul%C3%ADnica%20%28Botox%29.%20Podemos%20agendar%20uma%20avalia%C3%A7%C3%A3o%3F" target="_blank" rel="noopener noreferrer" class="btn-gold mt-auto inline-flex items-center justify-center gap-3 w-full px-6 py-3.5 rounded-full text-xs tracking-wider uppercase font-medium">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Quero suavizar linhas
+                        </a>
+                    </div>
+                </article>
+                <!-- 09. Preenchimento com Ácido Hialurônico -->
+                <article class="service-card flex flex-col bg-brand-white/[0.04] border border-brand-white/10 rounded-sm overflow-hidden">
+                    <!-- Espaço da imagem: coloque a URL no src do <img> -->
+                    <div class="service-img relative aspect-[8/5] overflow-hidden bg-gradient-to-br from-brand-brown/40 to-brand-charcoal">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 text-brand-taupe/60 pointer-events-none">
+                            <i class="fa-regular fa-image text-3xl"></i>
+                            <span class="text-[10px] uppercase tracking-[0.25em]">Imagem 09</span>
+                        </div>
+                        <img src="./Preenchimento-com-Ácido-Hialurônico.png" alt="Preenchimento com Ácido Hialurônico" loading="lazy" class="img-editorial relative w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 font-serif text-sm tracking-[0.2em] text-brand-offwhite/90 bg-brand-charcoal/50 backdrop-blur-sm px-3 py-1 rounded-full">09</span>
+                        <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-brand-charcoal/60 to-transparent pointer-events-none"></div>
+                    </div>
+
+                    <div class="flex flex-col flex-1 p-6 md:p-7">
+                        <h3 class="font-serif text-2xl md:text-[1.65rem] leading-tight text-brand-beige mb-4 pb-4 border-b border-brand-gold/40">Preenchimento com Ácido Hialurônico</h3>
+                        <div class="space-y-3 text-sm text-brand-sand font-light leading-relaxed opacity-90 mb-7">
+                            <p>Preenchimento estratégico para restaurar volume, melhorar contornos e devolver proporção ao rosto.</p>
+                            <p>Cada ml é planejado de acordo com a anatomia e as necessidades de cada paciente. Pode ser realizado em: lábios, malar, mandíbula, queixo, sulcos, têmporas e outras regiões. ✨</p>
+                        </div>
+                        <a href="https://wa.me/5521983916437?text=Ol%C3%A1%2C%20Dra.%20K%C3%AAnia%21%20Vi%20o%20site%20e%20tenho%20interesse%20no%20Preenchimento%20com%20%C3%81cido%20Hialur%C3%B4nico.%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="btn-gold mt-auto inline-flex items-center justify-center gap-3 w-full px-6 py-3.5 rounded-full text-xs tracking-wider uppercase font-medium">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Quero meu preenchimento
+                        </a>
+                    </div>
+                </article>
+                <!-- 10. Correção de sorriso gengival -->
+                <article class="service-card flex flex-col bg-brand-white/[0.04] border border-brand-white/10 rounded-sm overflow-hidden">
+                    <!-- Espaço da imagem: coloque a URL no src do <img> -->
+                    <div class="service-img relative aspect-[8/5] overflow-hidden bg-gradient-to-br from-brand-brown/40 to-brand-charcoal">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 text-brand-taupe/60 pointer-events-none">
+                            <i class="fa-regular fa-image text-3xl"></i>
+                            <span class="text-[10px] uppercase tracking-[0.25em]">Imagem 10</span>
+                        </div>
+                        <img src="./Correção-de-sorriso-gengival.png" alt="Correção de sorriso gengival" loading="lazy" class="img-editorial relative w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 font-serif text-sm tracking-[0.2em] text-brand-offwhite/90 bg-brand-charcoal/50 backdrop-blur-sm px-3 py-1 rounded-full">10</span>
+                        <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-brand-charcoal/60 to-transparent pointer-events-none"></div>
+                    </div>
+
+                    <div class="flex flex-col flex-1 p-6 md:p-7">
+                        <h3 class="font-serif text-2xl md:text-[1.65rem] leading-tight text-brand-beige mb-4 pb-4 border-b border-brand-gold/40">Correção de sorriso gengival</h3>
+                        <div class="space-y-3 text-sm text-brand-sand font-light leading-relaxed opacity-90 mb-7">
+                            <p>A correção do sorriso gengival é um tratamento realizado para reduzir a exposição excessiva da gengiva ao sorrir, deixando o sorriso mais equilibrado e harmonioso.</p>
+                            <p>A técnica é personalizada de acordo com a necessidade de cada paciente, buscando um resultado natural e delicado. ✨</p>
+                        </div>
+                        <a href="https://wa.me/5521983916437?text=Ol%C3%A1%2C%20Dra.%20K%C3%AAnia%21%20Vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20Corre%C3%A7%C3%A3o%20de%20sorriso%20gengival.%20Podemos%20agendar%20uma%20avalia%C3%A7%C3%A3o%3F" target="_blank" rel="noopener noreferrer" class="btn-gold mt-auto inline-flex items-center justify-center gap-3 w-full px-6 py-3.5 rounded-full text-xs tracking-wider uppercase font-medium">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Quero corrigir meu sorriso
+                        </a>
+                    </div>
+                </article>
+                <!-- 11. Lóbuloplastia -->
+                <article class="service-card flex flex-col bg-brand-white/[0.04] border border-brand-white/10 rounded-sm overflow-hidden">
+                    <!-- Espaço da imagem: coloque a URL no src do <img> -->
+                    <div class="service-img relative aspect-[8/5] overflow-hidden bg-gradient-to-br from-brand-brown/40 to-brand-charcoal">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 text-brand-taupe/60 pointer-events-none">
+                            <i class="fa-regular fa-image text-3xl"></i>
+                            <span class="text-[10px] uppercase tracking-[0.25em]">Imagem 11</span>
+                        </div>
+                        <img src="./Lóbuloplastia.png" alt="Lóbuloplastia" loading="lazy" class="img-editorial relative w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 font-serif text-sm tracking-[0.2em] text-brand-offwhite/90 bg-brand-charcoal/50 backdrop-blur-sm px-3 py-1 rounded-full">11</span>
+                        <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-brand-charcoal/60 to-transparent pointer-events-none"></div>
+                    </div>
+
+                    <div class="flex flex-col flex-1 p-6 md:p-7">
+                        <h3 class="font-serif text-2xl md:text-[1.65rem] leading-tight text-brand-beige mb-4 pb-4 border-b border-brand-gold/40">Lóbuloplastia</h3>
+                        <div class="space-y-3 text-sm text-brand-sand font-light leading-relaxed opacity-90 mb-7">
+                            <p>A lobuloplastia é um procedimento realizado para corrigir lóbulos das orelhas rasgados, alargados ou deformados pelo uso de brincos pesados ou traumas.</p>
+                            <p>É uma cirurgia simples, realizada com anestesia local, que devolve a aparência natural do lóbulo e permite o uso de brincos novamente após a cicatrização adequada. ✨</p>
+                        </div>
+                        <a href="https://wa.me/5521983916437?text=Ol%C3%A1%2C%20Dra.%20K%C3%AAnia%21%20Vi%20o%20site%20e%20tenho%20interesse%20na%20L%C3%B3buloplastia.%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="btn-gold mt-auto inline-flex items-center justify-center gap-3 w-full px-6 py-3.5 rounded-full text-xs tracking-wider uppercase font-medium">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Quero corrigir meu lóbulo
+                        </a>
+                    </div>
+                </article>
+                <!-- 12. Microagulhamento Facial -->
+                <article class="service-card flex flex-col bg-brand-white/[0.04] border border-brand-white/10 rounded-sm overflow-hidden">
+                    <!-- Espaço da imagem: coloque a URL no src do <img> -->
+                    <div class="service-img relative aspect-[8/5] overflow-hidden bg-gradient-to-br from-brand-brown/40 to-brand-charcoal">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 text-brand-taupe/60 pointer-events-none">
+                            <i class="fa-regular fa-image text-3xl"></i>
+                            <span class="text-[10px] uppercase tracking-[0.25em]">Imagem 12</span>
+                        </div>
+                        <img src="./Microagulhamento-Facial.png" alt="Microagulhamento Facial" loading="lazy" class="img-editorial relative w-full h-full object-cover">
+                        <span class="absolute top-4 left-4 font-serif text-sm tracking-[0.2em] text-brand-offwhite/90 bg-brand-charcoal/50 backdrop-blur-sm px-3 py-1 rounded-full">12</span>
+                        <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-brand-charcoal/60 to-transparent pointer-events-none"></div>
+                    </div>
+
+                    <div class="flex flex-col flex-1 p-6 md:p-7">
+                        <h3 class="font-serif text-2xl md:text-[1.65rem] leading-tight text-brand-beige mb-4 pb-4 border-b border-brand-gold/40">Microagulhamento Facial</h3>
+                        <div class="space-y-3 text-sm text-brand-sand font-light leading-relaxed opacity-90 mb-7">
+                            <p>O microagulhamento é um procedimento que estimula a produção natural de colágeno através de microperfurações controladas na pele.</p>
+                            <p>Ele ajuda a melhorar a textura, a firmeza, os poros dilatados, manchas e linhas finas, promovendo uma pele mais saudável, uniforme e rejuvenescida. ✨</p>
+                        </div>
+                        <a href="https://wa.me/5521983916437?text=Ol%C3%A1%2C%20Dra.%20K%C3%AAnia%21%20Vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20Microagulhamento%20Facial.%20Podemos%20agendar%20uma%20avalia%C3%A7%C3%A3o%3F" target="_blank" rel="noopener noreferrer" class="btn-gold mt-auto inline-flex items-center justify-center gap-3 w-full px-6 py-3.5 rounded-full text-xs tracking-wider uppercase font-medium">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Quero microagulhar
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Controles -->
+            <div class="flex items-center gap-5 md:gap-8 mt-8 md:mt-10">
+                <div class="relative flex-1 h-px bg-brand-white/15">
+                    <div id="svc-thumb" class="absolute -top-px h-[3px] bg-brand-gold rounded-full transition-[left] duration-300"></div>
                 </div>
-
-                <div class="bg-brand-white/5 p-8 md:p-12 border border-brand-white/10 rounded-sm fade-up" style="transition-delay: 200ms;">
-                    <h3 class="font-serif text-2xl text-brand-beige mb-6">Cuidado também está nos detalhes.</h3>
-                    <p class="font-light text-brand-sand mb-8 text-sm opacity-90 leading-relaxed">
-                        A escolha dos materiais e a atenção à sua procedência fazem parte de um atendimento responsável e cuidadoso.
-                    </p>
-                    <ul class="space-y-4 font-serif text-xl text-brand-offwhite">
-                        <li class="flex items-center gap-4 border-b border-brand-white/10 pb-3">
-                            <i class="fa-solid fa-check text-brand-gold text-sm"></i> Procedência
-                        </li>
-                        <li class="flex items-center gap-4 border-b border-brand-white/10 pb-3">
-                            <i class="fa-solid fa-check text-brand-gold text-sm"></i> Planejamento
-                        </li>
-                        <li class="flex items-center gap-4 border-b border-brand-white/10 pb-3">
-                            <i class="fa-solid fa-check text-brand-gold text-sm"></i> Anatomia
-                        </li>
-                        <li class="flex items-center gap-4">
-                            <i class="fa-solid fa-check text-brand-gold text-sm"></i> Individualidade
-                        </li>
-                    </ul>
+                <div class="flex gap-3">
+                    <button id="svc-prev" type="button" class="svc-arrow w-11 h-11 rounded-full border border-brand-gold/60 text-brand-gold flex items-center justify-center" aria-label="Serviço anterior"><i class="fa-solid fa-arrow-left text-sm"></i></button>
+                    <button id="svc-next" type="button" class="svc-arrow w-11 h-11 rounded-full border border-brand-gold/60 text-brand-gold flex items-center justify-center" aria-label="Próximo serviço"><i class="fa-solid fa-arrow-right text-sm"></i></button>
                 </div>
-
+            </div>
             </div>
         </div>
     </section>
@@ -1071,6 +1387,71 @@
                 closeLightbox();
             }
         });
+    </script>
+
+    <script>
+        // Carrossel de serviços
+        (function () {
+            const track = document.getElementById('svc-track');
+            if (!track) return;
+            const prev = document.getElementById('svc-prev');
+            const next = document.getElementById('svc-next');
+            const thumb = document.getElementById('svc-thumb');
+            const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            let timer = null;
+
+            const step = () => {
+                const card = track.querySelector('.service-card');
+                const gap = parseFloat(getComputedStyle(track).columnGap) || 24;
+                return card.getBoundingClientRect().width + gap;
+            };
+            const maxScroll = () => track.scrollWidth - track.clientWidth;
+
+            const update = () => {
+                const w = (track.clientWidth / track.scrollWidth) * 100;
+                thumb.style.width = w + '%';
+                thumb.style.left = (track.scrollLeft / track.scrollWidth) * 100 + '%';
+            };
+
+            const go = (dir) => {
+                const m = maxScroll();
+                if (dir > 0) {
+                    if (track.scrollLeft >= m - 4) track.scrollTo({ left: 0 });
+                    else track.scrollBy({ left: step() });
+                } else {
+                    if (track.scrollLeft <= 4) track.scrollTo({ left: m });
+                    else track.scrollBy({ left: -step() });
+                }
+            };
+
+            const stop = () => { clearInterval(timer); timer = null; };
+            const start = () => {
+                if (reduced) return;
+                stop();
+                timer = setInterval(() => go(1), 4500);
+            };
+
+            prev.addEventListener('click', () => { go(-1); start(); });
+            next.addEventListener('click', () => { go(1); start(); });
+            track.addEventListener('scroll', update, { passive: true });
+            window.addEventListener('resize', update);
+
+            // Pausa ao interagir
+            ['mouseenter', 'focusin', 'touchstart'].forEach(ev => track.addEventListener(ev, stop, { passive: true }));
+            ['mouseleave', 'focusout', 'touchend'].forEach(ev => track.addEventListener(ev, start, { passive: true }));
+            track.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
+                if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+            });
+
+            // Só avança sozinho quando estiver visível na tela
+            if ('IntersectionObserver' in window) {
+                new IntersectionObserver((entries) => {
+                    entries[0].isIntersecting ? start() : stop();
+                }, { threshold: 0.35 }).observe(track);
+            }
+            update();
+        })();
     </script>
 </body>
 </html>
